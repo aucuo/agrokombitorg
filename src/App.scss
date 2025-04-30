@@ -1,0 +1,626 @@
+
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.section {
+    position: relative;
+    padding: 60px 0;
+
+    @include respond-to('desktop') {
+        padding: 24px 0;
+    }
+
+    &__title {
+        z-index: 2;
+        position: relative;
+        @include text-style(700, 3.6rem, 4.4rem);
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        @include respond-to('tablet') {
+            text-align: center;
+            @include text-style(700, 2.4rem, 3.2rem);
+        }
+
+        span {
+            position: relative;
+            color: $white;
+
+            &:before {
+                z-index: -1;
+                @include pseudo();
+                inset: -10px -10px -8px -10px;
+                background: transparent url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI2MyIgdmlld0JveD0iMCAwIDI5OCA2MyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj4NCiAgPHBhdGggZD0iTTMuNSAyN0M0OC41IDMzIDE1OCA0MiAyOTUuNSAzMS41IiBzdHJva2U9IiMxNTdBNkUiIHN0cm9rZS13aWR0aD0iNTMiIC8+DQo8L3N2Zz4=') no-repeat center / contain;
+
+                @include respond-to('tablet') {
+                    inset: -5px -5px -5px -10px;
+                }
+            }
+
+            &[data-line="2"]:before {
+                z-index: -1;
+                @include pseudo();
+                inset: 0 -10px -10px -10px;
+                background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI2MiIgdmlld0JveD0iMCAwIDI2OCA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj4NCiAgPHBhdGggZD0iTTQuMjk2NDIgMzQuMDIwOUM2MC41NjggMjYuNjI0MiAxMjAuNTc4IDQ0LjMyNDMgMjY0LjUyOSAyNy4xOTM5IiBzdHJva2U9IiMxNTdBNkUiIHN0cm9rZS13aWR0aD0iNTMiIC8+DQo8L3N2Zz4=") no-repeat center / contain;
+
+                @include respond-to('tablet') {
+                    inset: -5px -5px -5px -5px;
+                }
+            }
+        }
+    }
+}
+
+.app {
+    .hero {
+        padding-top: 0;
+
+        @include respond-to('desktop') {
+            padding-top: 8px;
+        }
+
+        &__wrapper {
+            position: relative;
+            @include flex(center, center, column);
+            height: 720px;
+
+            @include respond-to('desktop') {
+                justify-content: flex-end;
+                height: 540px;
+                padding: 0 16px 48px;
+            }
+        }
+
+        &__title {
+            @include text-style(700, 4.8rem, auto, $white);
+            text-align: center;
+            margin-bottom: 24px;
+
+            @include respond-to('tablet') {
+                font-size: 2.8rem;
+                line-height: 36px;
+                margin-bottom: 16px;
+                padding: 0 64px;
+            }
+        }
+
+        &__text {
+            @include text-style(400, 2rem, auto, $white);
+            text-align: center;
+
+            @include respond-to('tablet') {
+                font-size: 1.6rem;
+                line-height: 24px;
+            }
+        }
+
+        &__background {
+            z-index: -1;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            overflow: hidden;
+            color: transparent;
+            filter:url(#round);
+
+            @include respond-to('desktop') {
+                filter: unset;
+                border-radius: 20px;
+            }
+
+            &:before {
+                @include pseudo();
+                width: 100%;
+                height: 100%;
+                background: transparent url("@/assets/images/hero.jpg") no-repeat center / cover;
+                filter: brightness(.8);
+                clip-path: polygon(
+                        0%   7%,   /* Левый верхний угол */
+                        85%  7%,  /* Начало скоса вверх */
+                        90%  0%, /* Правый верхний угол (нижняя часть) */
+                        100% 0%,   /* Правый верхний угол */
+                        100% 93%,  /* Правый нижний угол (верхняя часть) */
+                        15%  93%,  /* Начало скоса вниз */
+                        10%  100%, /* Левый нижний угол (нижняя часть) */
+                        0%   100%  /* Левый нижний угол */
+                );
+
+                @include respond-to('desktop') {
+                    clip-path: unset;
+                }
+            }
+        }
+    }
+
+    .pros {
+        padding-top: 120px;
+
+        @include respond-to('desktop') {
+            padding-top: 24px;
+        }
+
+        &__wrapper {
+            position: relative;
+            @include flex();
+            height: 600px;
+            gap: 20px;
+
+            @include respond-to('large') {
+                height: 480px;
+            }
+
+            @include respond-to('medium') {
+                height: 550px;
+            }
+
+            @include respond-to('desktop') {
+                height: fit-content;
+            }
+        }
+
+        &__col {
+            @include flex(space-between, flex-start, column);
+            max-width: 630px;
+            gap: 20px;
+
+            @include respond-to('large') {
+                max-width: 550px;
+            }
+
+            @include respond-to('desktop') {
+                flex-shrink: 0;
+                width: 300px;
+            }
+
+            @include respond-to('tablet') {
+                width: 100%;
+                max-width: unset;
+                gap: 32px;
+            }
+        }
+
+        &__info {
+            width: 100%;
+
+            @include respond-to('tablet') {
+                @include flex(center, stretch, column)
+            }
+        }
+
+        &__toggle {
+            @include respond-to('tablet') {
+                margin: -24px auto 24px;
+            }
+        }
+
+        &__banner {
+            z-index: -1;
+            position: absolute;
+            inset: 0 0 0 auto;
+            object-fit: contain;
+            height: 100%;
+
+            @include respond-to('medium') {
+                height: 90%;
+            }
+
+            @include respond-to('desktop') {
+                display: none;
+            }
+
+            &--medium {
+                display: none;
+
+                @include respond-to('desktop') {
+                    position: unset;
+                    display: flex;
+                    width: calc(100% - 320px);
+                    height: fit-content;
+                    object-fit: contain;
+                    border-radius: 20px;
+                }
+
+                @include respond-to('tablet') {
+                    display: none;
+                }
+            }
+
+            &--mobile {
+                display: none;
+
+                @include respond-to('tablet') {
+                    position: static;
+                    display: block;
+                    object-fit: cover;
+                    object-position: top center;
+                    border-radius: 20px;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 24px;
+            grid-row-gap: 24px;
+
+            @include respond-to('large') {
+                grid-column-gap: 12px;
+                grid-row-gap: 12px;
+            }
+
+            @include respond-to('medium') {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+            }
+
+            @include respond-to('tablet') {
+                grid-column-gap: 16px;
+                grid-row-gap: 16px;
+            }
+
+            &-cell {
+                @include flex();
+                gap: 24px;
+
+                @include respond-to('large') {
+                    gap: 12px;
+                }
+
+                @include respond-to('tablet') {
+                    align-items: center;
+                    gap: 24px;
+                }
+            }
+
+            &-icon {
+                box-sizing: content-box;
+                @include flex(center, center);
+                width: 28px;
+                height: 28px;
+                padding: 18px;
+                background-color: $white;
+                border-radius: 16px;
+                color: $dark;
+
+                @include respond-to('large') {
+                    width: 20px;
+                    height: 20px;
+                    padding: 8px;
+                }
+
+                @include respond-to('tablet') {
+                    width: 28px;
+                    height: 28px;
+                    padding: 18px;
+                }
+            }
+
+            &-info {
+                height: fit-content;
+            }
+
+            &-title {
+                @include text-style(700, 1.6rem, 2.1rem);
+                margin-bottom: 4px;
+            }
+
+            &-text {
+                @include text-style(400, 1.4rem, 2rem);
+                opacity: 60%;
+            }
+        }
+
+        &__button {
+            font-size: 16px;
+
+            @include respond-to('tablet') {
+                width: 100%;
+            }
+        }
+    }
+
+    .reasons {
+        &__title {
+            margin-bottom: 48px;
+
+            @include respond-to('tablet') {
+                margin-bottom: 32px;
+            }
+        }
+
+        &__list {
+            @include flex(space-between, stretch, row, wrap);
+            gap: 24px;
+
+            @include respond-to('tablet') {
+                gap: 16px;
+            }
+
+            &-item {
+                @include flex(center, center, column);
+                gap: 8px;
+                flex: 1;
+                padding: 24px 40px;
+                background-color: $white;
+                border-radius: 20px;
+
+                @include respond-to('tablet') {
+                    width: calc(50% - 16px);
+                    padding: 16px;
+                }
+            }
+
+            &-title {
+                @include text-style(700, 1.6rem, 2.1rem);
+                text-align: center;
+                white-space: pre-line;
+            }
+        }
+    }
+
+    .quality {
+        @include flex(space-between, stretch);
+        gap: 24px;
+
+        @include respond-to('desktop') {
+            flex-direction: column;
+        }
+
+        &__banner {
+            position: relative;
+            @include flex(flex-start, stretch);
+            height: 100%;
+
+            @include respond-to('tablet') {
+                height: fit-content;
+            }
+
+            &-info {
+                position: absolute;
+                left: 48px;
+                top: 40px;
+
+                @include respond-to('tablet') {
+                    top: 40px;
+                    left: 16px;
+                    right: 16px;
+                }
+            }
+
+            &-text {
+                @include respond-to('tablet') {
+                    display: block;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+
+            &-image {
+                border-radius: 30px;
+                width: 100%;
+                height: 100%;
+                flex-shrink: 1;
+                object-fit: cover;
+                object-position: right center;
+
+                @include respond-to('medium') {
+                    object-position: right -140px bottom 0;
+                }
+
+                @include respond-to('desktop') {
+                    object-position: center center;
+                }
+
+                @include respond-to('tablet') {
+                    display: none;
+                }
+
+                &--mobile {
+                    display: none;
+
+                    @include respond-to('tablet') {
+                        display: block;
+                        height: 530px;
+                        object-fit: cover;
+                        object-position: center bottom;
+                    }
+                }
+            }
+        }
+
+        &__col {
+            @include flex(space-between, stretch, column);
+            flex-shrink: 0;
+        }
+
+        &__pros {
+            @include flex(flex-start, center);
+            gap: 24px;
+            max-width: 300px;
+            padding: 16px 24px;
+            border-radius: 20px;
+            border: 1px solid #0000001A;
+            min-height: 84px;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+
+                @include respond-to('tablet') {
+                    margin-bottom: 12px;
+                }
+            }
+
+            @include respond-to('desktop') {
+                max-width: unset;
+            }
+
+            &-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            &-text {
+                line-height: 21px;
+            }
+        }
+    }
+
+    .about {
+        &__wrapper {
+            @include flex(space-between, flex-start);
+            gap: 40px;
+
+            @include respond-to('tablet') {
+                flex-direction: column;
+                gap: 12px;
+            };
+        }
+
+        &__image {
+            width: 200px;
+            min-height: 200px;
+            border-radius: 40px 5px 40px 40px;
+            object-fit: cover;
+            object-position: center center;
+
+            @include respond-to('tablet') {
+                width: 100%;
+                max-height: 250px;
+                border-radius: 40px 40px 40px 5px;
+            };
+
+            @include respond-to('phone') {
+                height: 200px;
+                width: 100%;
+            };
+        }
+
+        &__title {
+            @include respond-to('tablet') {
+                margin-bottom: 6px;
+                text-align: left;
+            };
+        }
+    }
+
+    .products {
+        &__grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 24px;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+
+            @include respond-to('desktop') {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include respond-to('phone') {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        &__item {
+            width: 100%;
+        }
+
+        &__button {
+            margin-left: auto;
+            padding: 0 48px;
+
+            @include respond-to('tablet') {
+                width: 100%;
+            }
+        }
+    }
+
+    .cta {
+        max-width: 1312px;
+        margin: 0 auto;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @include respond-to('tablet') {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            margin-bottom: -50px;
+        }
+
+        &__banner {
+            position: relative;
+
+            &-info {
+                position: absolute;
+                inset: 0;
+                @include flex(center, center, column);
+            }
+
+            &-title {
+                margin-bottom: 16px;
+                color: $white;
+            }
+
+            &-text {
+                margin-bottom: 40px;
+                color: $white;
+                opacity: .8;
+
+                @include respond-to('tablet') {
+                    margin-bottom: 32px;
+                }
+            }
+
+            &-button {
+                @include respond-to('tablet') {
+                    font-size: 16px;
+                }
+            }
+
+            &-image {
+                width: 100%;
+                height: 330px;
+                object-fit: cover;
+                border-radius: 40px;
+
+                @include respond-to('tablet') {
+                    display: none;
+                }
+
+                &--mobile {
+                    display: none;
+
+                    @include respond-to('tablet') {
+                        display: block;
+                        border-radius: 20px 20px 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.aucuo {
+    font-size: 14px;
+
+    a {
+        text-decoration: underline;
+        color: inherit;
+        transition: .1s all ease-in-out;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+}

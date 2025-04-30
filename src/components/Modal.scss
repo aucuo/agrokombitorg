@@ -1,0 +1,55 @@
+
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.modal {
+    z-index: 1000;
+    @include pin();
+    @include flex(center, center);
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &__content {
+        z-index: 1;
+        position: relative;
+        background-color: $dark;
+        color: $white;
+        min-height: 200px;
+        padding: 24px;
+        border-radius: 8px;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &__close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    &__contact {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        &-phone {
+            @include text-style(700, 16px);
+            margin-top: 4px;
+        }
+    }
+}

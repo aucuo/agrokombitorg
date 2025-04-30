@@ -1,0 +1,64 @@
+
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.footer {
+    z-index: 1;
+    position: relative;
+    background-color: $dark;
+    border-radius: 40px 40px 0 0;
+    color: $white;
+    padding-top: 40px;
+
+    @include respond-to('tablet') {
+        border-radius: 20px 20px 0 0;
+    }
+
+    &__logo {
+        width: 170px;
+        height: auto;
+
+        @include respond-to('tablet') {
+            margin-bottom: 20px;
+        }
+    }
+
+    .nav {
+        &__list {
+            @include flex(flex-start, center, row, wrap);
+            gap: 18px;
+
+            &-link {
+                font-weight: 700;
+                color: $white;
+                transition: .2s all ease-in-out;
+
+                &:hover {
+                    color: darken($white, 20%);
+                }
+            }
+        }
+    }
+
+    &__row {
+        @include flex(space-between, flex-end);
+        margin-bottom: 48px;
+
+        @include respond-to('tablet') {
+            @include flex(flex-start, stretch, column);
+            gap: 24px;
+            margin-bottom: 33px;
+            padding: 0 8px;
+        }
+    }
+
+    &__rights {
+        padding: 24px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+        &-wrapper {
+            @include flex(space-between, center, row, wrap);
+            gap: 24px;
+        }
+    }
+}

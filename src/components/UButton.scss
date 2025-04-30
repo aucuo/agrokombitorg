@@ -1,0 +1,77 @@
+
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+// Миксин для создания модификаторов кнопок
+@mixin button-variant($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+
+    @media (hover: hover) {
+        &:not(.btn--transparent):hover {
+            background-color: darken($bg-color, 2%);
+        }
+    }
+
+    &:not(.btn--transparent):active {
+        background-color: darken($bg-color, 4%);
+    }
+}
+
+// Базовый класс для кнопки
+.btn {
+    position: relative;
+    @include flex(center, center);
+    @include button-reset();
+    @include text-ellipsis();
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    height: 50px;
+    border-radius: 8px;
+    transition: background-color 0.1s ease, transform 0.2s ease-in-out;
+    padding: 0 24px;
+
+    .reactsvg {
+        width: 24px;
+        height: 24px;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    @media (hover: hover) {
+        &:active {
+            transform: scale(0.99);
+        }
+    }
+
+    // Модификаторы для различных вариантов кнопок
+    &--primary {
+        @include button-variant($primary, #fff);
+    }
+
+    &--dark {
+        @include button-variant($dark, #fff);
+    }
+
+    &--white {
+        @include button-variant($white, $dark);
+    }
+
+    &--transparent {
+        @include button-variant(transparent, $dark);
+    }
+
+    &--transparent-white {
+        @include button-variant(rgba(255, 255, 255, 0.05), $white);
+    }
+
+    &--circle {
+        @include flex(center, center);
+        width: 50px;
+        padding: 0;
+        border-radius: 100px;
+    }
+}

@@ -1,0 +1,184 @@
+
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.header {
+    padding: 30px 0;
+
+    @include respond-to('desktop') {
+        padding: 8px 0;
+    }
+
+    &__wrapper {
+        @include flex(space-between, center);
+        gap: 80px;
+
+        @include respond-to('large') {
+            gap: 30px;
+        }
+    }
+
+    .burger,
+    .person {
+        display: none;
+
+        @include respond-to('desktop') {
+            @include flex(center, center);
+            @include button-reset();
+            background-color: $dark;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+        }
+
+        &-icon {
+            width: 24px;
+            height: 24px;
+            color: $white;
+        }
+    }
+
+    .person {
+        background-color: $primary;
+    }
+
+    &__logo {
+        width: 170px;
+        height: auto;
+
+        @include respond-to('large') {
+            width: 140px;
+            gap: 20px;
+        }
+
+        @include respond-to('desktop') {
+            width: 180px;
+        }
+
+        @include respond-to('phone') {
+            width: 140px;
+        }
+    }
+
+    &__menu {
+        @include flex(space-between, center);
+        gap: 20px;
+        flex: 1;
+
+        @include respond-to('desktop') {
+            display: none;
+            @include pin();
+            z-index: 900;
+            flex-direction: column;
+            background-color: $white;
+            padding: 20px;
+            gap: 0;
+
+            &--shown {
+                display: flex;
+            }
+        }
+    }
+
+    &__close {
+        display: none;
+
+        @include respond-to('desktop') {
+            @include flex(center, center);
+            @include button-reset();
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: $dark;
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+        }
+
+        &-icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .nav {
+        flex: 1;
+
+        &__list {
+            @include flex(flex-start, center);
+            gap: 24px;
+
+            @include respond-to('large') {
+                gap: 12px;
+            }
+
+            @include respond-to('desktop') {
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                gap: 20px;
+            }
+
+            &-link {
+                font-weight: 700;
+                color: $dark;
+                transition: .2s all ease-in-out;
+
+                @include respond-to('large') {
+                    font-size: 15px;
+                }
+
+                @include respond-to('desktop') {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    color: lighten($dark, 20%);
+                }
+            }
+        }
+    }
+
+    &__right {
+        @include flex(flex-start, center);
+        gap: 20px;
+
+        @include respond-to('desktop') {
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    &__contact {
+        @include flex(center, flex-start, column);
+        gap: 2px;
+
+        &--second {
+            @include respond-to('xl') {
+                display: none;
+            }
+
+            @include respond-to('desktop') {
+                display: flex;
+            }
+        }
+
+        &-phone {
+            @include text-style(700, 18px);
+
+            @include respond-to('large') {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__buttons {
+        @include flex(flex-start, center);
+        gap: 16px;
+
+        @include respond-to('desktop') {
+            display: none;
+        }
+    }
+}
