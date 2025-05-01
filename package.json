@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://aucuo.github.io/agrokombitorg",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc -b && vite build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",

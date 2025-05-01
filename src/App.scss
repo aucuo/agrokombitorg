@@ -32,7 +32,7 @@
                 z-index: -1;
                 @include pseudo();
                 inset: -10px -10px -8px -10px;
-                background: transparent url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI2MyIgdmlld0JveD0iMCAwIDI5OCA2MyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj4NCiAgPHBhdGggZD0iTTMuNSAyN0M0OC41IDMzIDE1OCA0MiAyOTUuNSAzMS41IiBzdHJva2U9IiMxNTdBNkUiIHN0cm9rZS13aWR0aD0iNTMiIC8+DQo8L3N2Zz4=') no-repeat center / contain;
+                background: transparent url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI2MyIgdmlld0JveD0iMCAwIDI5OCA2MyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj4NCiAgPHBhdGggZD0iTTMuNSAyN0M0OC41IDMzIDE1OCA0MiAyOTUuNSAzMS41IiBzdHJva2U9IiMxNTdBNkUiIHN0cm9rZS13aWR0aD0iNTMiIC8+DQo8L3N2Zz4=') no-repeat center / cover;
 
                 @include respond-to('tablet') {
                     inset: -5px -5px -5px -10px;
@@ -43,7 +43,7 @@
                 z-index: -1;
                 @include pseudo();
                 inset: 0 -10px -10px -10px;
-                background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI2MiIgdmlld0JveD0iMCAwIDI2OCA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj4NCiAgPHBhdGggZD0iTTQuMjk2NDIgMzQuMDIwOUM2MC41NjggMjYuNjI0MiAxMjAuNTc4IDQ0LjMyNDMgMjY0LjUyOSAyNy4xOTM5IiBzdHJva2U9IiMxNTdBNkUiIHN0cm9rZS13aWR0aD0iNTMiIC8+DQo8L3N2Zz4=") no-repeat center / contain;
+                background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI2MiIgdmlld0JveD0iMCAwIDI2OCA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj4NCiAgPHBhdGggZD0iTTQuMjk2NDIgMzQuMDIwOUM2MC41NjggMjYuNjI0MiAxMjAuNTc4IDQ0LjMyNDMgMjY0LjUyOSAyNy4xOTM5IiBzdHJva2U9IiMxNTdBNkUiIHN0cm9rZS13aWR0aD0iNTMiIC8+DQo8L3N2Zz4=") no-repeat center / cover;
 
                 @include respond-to('tablet') {
                     inset: -5px -5px -5px -5px;
