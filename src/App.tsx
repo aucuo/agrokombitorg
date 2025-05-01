@@ -119,7 +119,7 @@ function App() {
                         <div className="hero__background"></div>
                     </div>
                 </section>
-                <section className="app__pros pros app__section section container">
+                <section className="app__pros pros app__section section container" id="pros">
                     <div className="pros__wrapper">
                         <div className="pros__col">
                             <div className="pros__info">
@@ -159,7 +159,7 @@ function App() {
                         <img className="pros__banner" src={ProsBannerImage} alt="Корова в короне"/>
                     </div>
                 </section>
-                <section className="app__about about section container">
+                <section className="app__about about section container" id="about">
                     <div className="about__wrapper">
                         <img className="about__image" src={AboutBanner} alt="Комбикорм Агрокомбиторг"/>
                         <div className="about__text">
@@ -200,7 +200,7 @@ function App() {
                         </div>
                     </div>
                 </section>
-                <section className="app__quality quality section container">
+                <section className="app__quality quality section container" id="products">
                     <div className="quality__wrapper">
                         <div className="quality__banner">
                             <div className="quality__banner-info">

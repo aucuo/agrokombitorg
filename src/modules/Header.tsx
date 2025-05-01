@@ -12,19 +12,19 @@ function Header() {
     const navItems = [
         {
             text: 'Главная',
-            href: '#'
+            href: '#main'
         },
         {
             text: 'Преимущества',
-            href: '#'
+            href: '#pros'
         },
         {
             text: 'О нас',
-            href: '#'
+            href: '#about'
         },
         {
             text: 'Продукция',
-            href: '#'
+            href: '#products'
         },
     ];
 
@@ -32,7 +32,7 @@ function Header() {
     const { openContactsModal } = useModal();
 
     return (
-        <header className="header">
+        <header className="header" id="main">
             <div className="header__wrapper container">
                 <button className="burger header__burger" onClick={() => setShow(true)}>
                     <ReactSVG className="burger-icon reactsvg" src={BurgerIcon}/>

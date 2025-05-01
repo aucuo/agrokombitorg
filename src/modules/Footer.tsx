@@ -8,19 +8,19 @@ function Footer() {
     const navItems = [
         {
             text: 'Главная',
-            href: '#'
+            href: '#main'
         },
         {
             text: 'Преимущества',
-            href: '#'
+            href: '#pros'
         },
         {
             text: 'О нас',
-            href: '#'
+            href: '#about'
         },
         {
             text: 'Продукция',
-            href: '#'
+            href: '#products'
         },
     ];
     return (

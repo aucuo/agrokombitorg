@@ -7,6 +7,10 @@
     font-size: 62.5%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Inter, system-ui, sans-serif;
     font-size: 1.6rem;
